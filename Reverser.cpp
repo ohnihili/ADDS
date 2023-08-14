@@ -18,7 +18,9 @@ int Reverser::reverseDigit(int value)
 
 std::string Reverser::reverseString(std::string characters)
 {
-
-    
-    return "NA";
+    if (characters.empty())
+    {
+        return characters;
+    }
+    return characters[characters.size() - 1] + reverseString(characters.substr(0, characters.size() - 1));
 }

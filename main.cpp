@@ -15,9 +15,13 @@ int main() {
 
     Reverser obj;
 
-    int value = obj.reverseDigit(15376);
+    int value = obj.reverseDigit(1234567);
 
     cout << value << endl;
+
+    string word = obj.reverseString("Wow this actually works!");
+
+    cout << word << endl;
 
 
     return 0;
