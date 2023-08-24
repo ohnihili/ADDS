@@ -7,7 +7,7 @@ int main() {
 
     string str1 = "12912391234";
 
-    string str2 = "12345";
+    string str2 = "123456";
 
     Finder find;
 

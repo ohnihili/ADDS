@@ -14,11 +14,8 @@ vector<int> Finder::findSubstrings(string s1, string s2)
         //if index = -1, push -1 into rest of vector
         if (index == -1)
         {
-            for(size_t j = i; j<=s2.size(); j++)
-            {
             result.push_back(-1);
-            }
-            return result;
+            continue;
         }
 
         //modify find to start from index
@@ -30,7 +27,7 @@ vector<int> Finder::findSubstrings(string s1, string s2)
             result.push_back(found);
             index = found;
 
-            //update index again
+        //update index again
         } else {
             result.push_back(-1);
             index = -1;
