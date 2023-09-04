@@ -1,32 +1,35 @@
-#include <iostream>
-#include <vector>
 #include "BubbleSort.h"
 #include "QuickSort.h"
-
+#include "RecursiveBinarySearch.h"
+#include <vector>
+#include <string>
+#include <iostream>
+#include <sstream>
 
 int main() {
 
-    std::vector<int> test = {1,4,3,5,2,1};
+    BubbleSort bub;
+    RecursiveBinarySearch search;
+    std::string values;
+    std::vector<int> numbers;
 
+    std::getline(std::cin, values);
+    std::istringstream iss(values);
+    int number;
 
-    //Bubblesort 
-    BubbleSort use;
-    std::vector<int> sorted = use.sort(test);
-    for (size_t i =0;i<test.size();i++)
+    while (iss >> number) 
     {
-        std::cout << sorted[i] << std::endl;
+        numbers.push_back(number);
     }
 
-    std::cout <<std::endl;
+    std::vector<int> sorted = bub.sort(numbers);
+    bool searched = search.search(numbers, 1);
+    std::cout<<std::boolalpha<<searched<< " ";
 
-    // Quicksort
-    QuickSort use2;
-    std::vector<int> sorted2 = use2.sort(test);
-    for (size_t i =0;i<sorted2.size();i++)
+    for (int i = 0; i < sorted.size(); i++) 
     {
-        std::cout << sorted2[i] << std::endl;
+        std::cout << numbers[i] << " ";
     }
 
-
-    return 0;
+    return 1;
 }
