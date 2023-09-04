@@ -23,7 +23,7 @@ int main() {
     }
 
     std::vector<int> sorted = bub.sort(numbers);
-    bool searched = search.search(numbers, 1);
+    bool searched = search.search(sorted, 1);
 
     std::cout << std::boolalpha << searched << " ";
 
