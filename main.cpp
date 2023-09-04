@@ -24,10 +24,10 @@ int main() {
 
     std::vector<int> sorted = bub.sort(numbers);
     bool searched = search.search(numbers, 1);
-    
+
     std::cout << std::boolalpha << searched << " ";
 
-    for (int i = 0; i < sorted.size(); i++) 
+    for (size_t i = 0; i < sorted.size(); i++) 
     {
         std::cout << sorted[i] << " ";
     }
