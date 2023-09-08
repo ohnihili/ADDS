@@ -3,10 +3,10 @@
 Node::Node()
 {
     data = 0;
-    link = NULL;
+    link = nullptr;
 }
 Node::Node(int data)
 {
     this->data = data;
-    link = NULL;
+    link = nullptr;
 }
