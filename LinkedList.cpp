@@ -82,14 +82,15 @@ bool LinkedList::deletePosition(int pos)
 
     temp = head;
 
-    if ((pos < 0) || (pos > size))
+    if ((pos <= 0) || (pos > size))
     {
         return false;
-    } else if ((pos == 0) || (pos == 1))
+    } else if ((pos == 1))
     {
         temp=temp->link;
         delete head;
         head = temp;
+        return true;
     } else
     {
     for(int i=1; i<pos-1; i++)
@@ -105,6 +106,7 @@ bool LinkedList::deletePosition(int pos)
     temp->link = temp2->link;
 
     delete temp2;
+    return true;
     }
 
     return false;
@@ -168,9 +170,25 @@ int LinkedList::search(int target)
 void LinkedList::printList()
 {
     Node* currNode = head;
-    while (currNode != nullptr)
+    Node *temp = head;
+    int size = 1;
+    while(temp->link != nullptr)
     {
-        std::cout << "[" <<currNode->data << "] ";
-        currNode = currNode->link;
+        temp=temp->link;
+        size++;
     }
+
+    std::cout << "[";
+    for (int i=0;i<size;i++)
+    {
+        if(i<size-1)
+        {
+            std::cout << currNode->data << " ";
+            currNode= currNode->link;
+        } else 
+        {
+            std::cout << currNode->data;
+        }
+    }
+    std::cout << "]";
 }
