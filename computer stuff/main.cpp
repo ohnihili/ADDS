@@ -11,7 +11,7 @@ int main() {
 
     Referee ref;
 
-    ref.refGame(com, John);
+    ref.refGame(Jack, John);
 
 
 
